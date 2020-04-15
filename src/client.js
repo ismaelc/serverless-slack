@@ -163,7 +163,8 @@ class Client {
     });
 
     // sends a 301 redirect
-    return 'https://slack.com/oauth/authorize?' + qs.stringify(args);
+    //return 'https://slack.com/oauth/authorize?' + qs.stringify(args);
+    return 'https://slack.com/oauth/v2/authorize?' + qs.stringify(args);
   }
 
 
@@ -174,7 +175,8 @@ class Client {
    * @return {Promise} A promise with the API response
    */
   getToken(args) {
-    return this.send('oauth.access', { 
+    //return this.send('oauth.access', { 
+    return this.send('oauth.v2.access', { 
       code: args.code,
       state: args.state, 
       client_id: process.env.CLIENT_ID, 
