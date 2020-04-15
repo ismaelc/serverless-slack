@@ -12,7 +12,8 @@ const AWS = require("aws-sdk"),
  */
 exports.save = function(data) {
   //data.id = data.team_id;
-  data.id = data.team.id;
+  //data.id = data.team.id;
+  data.id = 'T03EE7DCP'
   return this.query('put', { Item: data });
 }
 
