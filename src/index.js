@@ -53,7 +53,6 @@ class Slack extends EventEmitter {
       callback(redirectUrl);
     }
 
-    console.log(`[OAUTH PLOAD]: ${JSON.stringify(payload)}`)
     if (payload.code) {
       // install app
       client.install(payload).then(save).then(success).catch(fail);

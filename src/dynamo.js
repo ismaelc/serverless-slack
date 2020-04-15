@@ -11,8 +11,8 @@ const AWS = require("aws-sdk"),
  * @return {Promise} A Promise with the save results
  */
 exports.save = function(data) {
-  console.log(`[DATA] ${JSON.stringify(data)}`)
-  data.id = data.team_id;
+  //data.id = data.team_id;
+  data.id = data.team.id;
   return this.query('put', { Item: data });
 }
 
